@@ -21,6 +21,8 @@ public class Lose : MonoBehaviour {
         {
             SceneManager.LoadScene(4);
             Debug.Log("Lose");
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
     }
 }

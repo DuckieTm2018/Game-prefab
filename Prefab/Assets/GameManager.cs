@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour // this will run though out all levels
 
     public int startinglives = 1; // lives the player will start with 
    
-
+    
    
     public bool gameIsRunning;
 

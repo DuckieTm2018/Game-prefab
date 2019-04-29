@@ -18,6 +18,9 @@ public class MenuButtonFunction : MonoBehaviour {
     public void StartButton()
     {
         SceneManager.LoadScene(1);
+        Time.timeScale = 1f;
+
+
     }
 
     public void MainMenuButton()
@@ -34,4 +37,6 @@ public class MenuButtonFunction : MonoBehaviour {
     {
         Scene scene = SceneManager.GetActiveScene(); SceneManager.LoadScene(scene.name);
     }
+
+
 }

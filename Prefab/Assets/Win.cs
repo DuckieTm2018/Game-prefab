@@ -23,8 +23,9 @@ public class Win : MonoBehaviour {
         {
             SceneManager.LoadScene(3);
             Debug.Log("Win");
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
 
-            
         }
     }
 }

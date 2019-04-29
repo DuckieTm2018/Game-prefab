@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerController : MonoBehaviour {
 
     public float speed = 5f;
     public float crouchSpeed = 2.5f;
+    public float runSpeed = 7f;
     public bool Crouch;
+ 
     public GameObject Player;
-    public GameObject PauseMenu;
+ 
     
 
     // Use this for initialization
@@ -16,36 +19,24 @@ public class PlayerController : MonoBehaviour {
         Cursor.lockState = CursorLockMode.Locked;
         
 	}
-	
-	// Update is called once per frame
-	void Update () {
-        
+
+    // Update is called once per frame
+    void Update()
+    {
 
 
 
-        float translation = Input.GetAxis("Vertical") * speed;
-        float straffe = Input.GetAxis("Horizontal") * speed;
-        translation *= Time.deltaTime;
-        straffe *= Time.deltaTime;
-
-        transform.Translate(straffe, 0, translation);
-
-
-
-
-        if (Input.GetKeyDown("escape"))
+        if (!PauseMenu.Instance.GameIsPaused)
         {
-            Cursor.lockState = CursorLockMode.None;
-            if (PauseMenu != null) 
-                PauseMenu.SetActive(true);
+            float translation = Input.GetAxis("Vertical") * speed;
+            float straffe = Input.GetAxis("Horizontal") * speed;
+            translation *= Time.deltaTime;
+            straffe *= Time.deltaTime;
+            transform.Translate(straffe, 0, translation);
+
+            crouching();
+           
         }
-
-
-
-        crouching();
-     
-
-
     }
 
     private void crouching()
