@@ -5,9 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class MenuButtonFunction : MonoBehaviour {
 
+    PauseMenu pauseMenu;
+
 	// Use this for initialization
 	void Start () {
-		
+        pauseMenu.mainMenuActive = true;		
 	}
 	
 	// Update is called once per frame

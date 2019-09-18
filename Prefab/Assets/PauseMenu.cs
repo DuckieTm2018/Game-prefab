@@ -12,6 +12,7 @@ public class PauseMenu : MonoBehaviour {
     public bool GameIsPaused { get; private set; }
     public GameObject pauseMenuUI;
     public KeyCode pauseKey = KeyCode.P;
+    public bool mainMenuActive;
 
     public bool IsInMainMenu; 
 
@@ -34,11 +35,10 @@ public class PauseMenu : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-		if (Input.GetKeyDown(pauseKey))
+		if (Input.GetKeyDown(pauseKey) && !mainMenuActive)
         {
 
           
-            
 
                 if (GameIsPaused)
                 {
@@ -58,7 +58,11 @@ public class PauseMenu : MonoBehaviour {
                 }
          
         }
-	}
+
+
+  
+
+    }
 
     public void Resume()
     {
